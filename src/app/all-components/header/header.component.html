@@ -1,0 +1,23 @@
+<div class="  px-4 py-4 mb-2 flex items-center justify-between">
+
+
+        @if(!cartPageStatus){
+
+                <div>
+                        <img src="../../../assets/images/profile_icon.png" class="size-9" alt="" srcset="">
+                </div>
+
+                <div class="relative">
+                        <i class="text-2xl fa-solid fa-basket-shopping" [routerLink]=" '/cart-page' "></i>
+
+                        @if(listLength>0){
+                        
+
+                                <i class="fa-solid fa-circle animate-ping text-[6px]  text-red-600  absolute top-[5%] right-[-5%]" ></i>
+                        }
+                </div>
+        }
+        @else {
+                <i class="text-2xl fa-solid fa-house" [routerLink]=" '/home' "></i>
+        }
+</div>

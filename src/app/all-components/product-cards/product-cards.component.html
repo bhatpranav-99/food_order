@@ -1,0 +1,29 @@
+
+
+
+
+@if(productList.length>0){
+        <div class="my-5 px-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 ">
+        @for (prod of productList; track $index) {
+            <div class="py-4 px-2 rounded-2xl flex flex-col justify-between shadow-lg bg-[rgba(238,247,255,0.6)]">
+                <img [src]="prod.productImgUrl" alt="" class="self-center object-cover object-center size-20" srcset="">
+                <h1 class="text-black font-bold">{{prod.productName}}</h1>
+                <h1 class="text-xs">{{prod.productSubtitle}}</h1>
+                
+                <div class="mt-5 flex justify-between items-center">
+                    <h1 class="font-bold ">{{prod.productPrice|currency:'INR'}}</h1>
+                    <button class="size-10 p-2 rounded-full shadow-xl bg-white" (click)="navigateToProductDetail(prod)"><i class="text-xl text-center fa-solid fa-cart-arrow-down"></i></button>
+                </div>
+            </div>
+        }
+    </div   >
+    }
+    @else {
+       <div class="relative">
+        <h1 class="text-center text-xs capitalize mt-20"><span class="text-4xl font-bold text-rose-600">Oops!</span><br>Unfortunately, we couldn't find any results for your search.<br> <span class="font-bold">Why not try something new from our menu?</span></h1>
+       
+            <button class="text-white bg-[#203e5f] py-1 px-6 uppercase font-bold rounded-xl absolute top-[100%] left-[50%] translate-x-[-50%]" (click)="updateManu()">ok</button>
+    
+       </div>
+    }
+

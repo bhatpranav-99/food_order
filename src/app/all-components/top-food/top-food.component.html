@@ -1,0 +1,18 @@
+
+<h1 class="text-center font-bold  text-rose-600 uppercase mt-5  text-xs animate-bounce">top Food</h1>
+<div class="product-container py-2 my-0 flex items-center gap-2 px-4 overflow-x-auto">
+    @if(topProduct){
+        @for(pr of topProduct;track $index){
+          
+    
+            <div class=" border-2 border-slate-200 shrink-0  rounded-full hover:bg-slate-700 hover:border-2 hover:duration-1000 duration-1000 hover:border-white flex items-center" (click)="selectedProduct(pr.productName,$index)">
+                <img [src]="pr.productImgUrl" class=" object-cover  size-16 object-center " alt="" srcset="">
+                
+                @if (flag && ($index == listNum)) {
+                    <h2 class="px-2 text-white font-bold animate-pulse">{{pr.productName}}</h2>
+                }
+
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,19 @@
+.wave{
+    display:inline-block;
+    animation-name: wave-hand;
+    animation-duration: 2.5s;
+    transform-origin: 70% 70%;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes wave-hand{
+  // 0%{ transform: rotate(-155deg); }
+  15%{transform: rotate(-15deg);}
+  35%{transform: rotate(15deg);}
+  50%{transform: rotate(-15deg);}
+  // 75%{transform: rotate(10deg);}
+  75%{transform: rotate(15deg);}
+  // 90%{transform: rotate(0deg);}
+  100%{transform: rotate(0deg);}
+}
